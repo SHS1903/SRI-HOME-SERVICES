@@ -60,6 +60,34 @@ cursor:pointer;
 font-size:12px
 }
 
+/* POPUP */
+.popup{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center
+}
+
+.popup-content{
+background:#111;
+padding:20px;
+border-radius:10px;
+text-align:center;
+position:relative
+}
+
+.close{
+position:absolute;
+top:5px;
+right:10px;
+cursor:pointer;
+font-size:20px;
+color:white
+}
+
 /* ABOUT */
 .about{
 padding:30px;
@@ -93,7 +121,7 @@ margin:8px;
 filter: hue-rotate(10deg) saturate(200%) brightness(1.2);
 }
 
-/* FLOAT BUTTONS */
+/* FLOAT */
 .float{
 position:fixed;
 bottom:20px;
@@ -136,7 +164,9 @@ cursor:pointer
 <div class="card"><div class="icon">🚚</div><div class="title">Packers & Movers</div><button onclick="openPopup('Packers & Movers')">Book Now</button></div>
 <div class="card"><div class="icon">🔧</div><div class="title">Plumbing Works</div><button onclick="openPopup('Plumbing Works')">Book Now</button></div>
 <div class="card"><div class="icon">⚡</div><div class="title">Electrical Works</div><button onclick="openPopup('Electrical Works')">Book Now</button></div>
+
 <div class="card"><div class="icon">❄️</div><div class="title">AC Installation and Service</div><button onclick="openPopup('AC Service')">Book Now</button></div>
+
 <div class="card"><div class="icon">🚿</div><div class="title">Water Tank Cleaning</div><button onclick="openPopup('Water Tank Cleaning')">Book Now</button></div>
 <div class="card"><div class="icon">🛁</div><div class="title">Bathroom Cleaning</div><button onclick="openPopup('Bathroom Cleaning')">Book Now</button></div>
 <div class="card"><div class="icon">🧹</div><div class="title">House Cleaning</div><button onclick="openPopup('House Cleaning')">Book Now</button></div>
@@ -171,34 +201,57 @@ cursor:pointer
 <h3>About SRI HOME SOLUTIONS</h3>
 
 <p>
-SRI HOME SOLUTIONS is a complete home service company providing end-to-end solutions for residential and commercial needs.  
-We specialize in delivering high-quality, affordable, and reliable services across all major home-related works.
+SRI HOME SOLUTIONS is a complete home service provider offering reliable, affordable, and high-quality services.
 </p>
 
 <p>
-Our expert team handles everything from plumbing, electrical works, AC installation and service, cleaning services, painting, interior works, carpentry, and full-scale construction projects.  
-We also assist with real estate services, property approvals (GHMC, HMDA), land conversion, and loan support.
+We provide Plumbing, Electrical, AC Installation and Service, Cleaning, Painting, Interior Work, Carpentry, Construction, Real Estate and Government Permissions under one roof.
 </p>
 
 <p>
-We are committed to providing timely service, transparent pricing, and professional workmanship.  
-Customer satisfaction is our top priority, and we ensure every project is completed with care, precision, and trust.
+Our mission is to deliver fast service, professional workmanship, and 100% customer satisfaction.
 </p>
 
 <p>
-📞 Contact: 6281396438  
-<br>
-📍 Serving all locations with trusted professionals
+📞 Contact: 6281396438
 </p>
 
 </div>
 
+<!-- POPUP -->
+<div id="popup" class="popup" onclick="closePopup(event)">
+<div class="popup-content">
+<span class="close" onclick="closePopup()">&times;</span>
+<h3>Choose Option</h3>
+<button onclick="call()">📞 Call</button>
+<button onclick="book()">💬 WhatsApp</button>
+</div>
+</div>
+
+<!-- FLOAT -->
 <a class="float" href="https://wa.me/916281396438">💬</a>
 <button class="share" onclick="shareSite()">🔗</button>
 
 <script>
+let selectedService="";
+
 function openPopup(service){
-window.open(`https://wa.me/916281396438?text=Hi, I want ${service} service.`);
+selectedService=service;
+document.getElementById('popup').style.display='flex';
+}
+
+function closePopup(e){
+if(!e || e.target.id==='popup'){
+document.getElementById('popup').style.display='none';
+}
+}
+
+function book(){
+window.open(`https://wa.me/916281396438?text=Hi, I want ${selectedService} service.`);
+}
+
+function call(){
+window.location.href="tel:6281396438";
 }
 
 function shareSite(){

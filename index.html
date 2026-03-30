@@ -1,56 +1,8 @@
-<!-- ================= ADMIN PAGE (admin.html) ================= -->
-<!DOCTYPE html>
-<html>
-<head>
-<title>Admin - SRI HOME SOLUTIONS</title>
-<style>
-body{font-family:Arial;background:#0a0a0a;color:white;padding:20px}
-h2{text-align:center}
-.box{background:linear-gradient(135deg,#1a1a1a,#330000);padding:12px;margin:10px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;color:white;box-shadow:0 4px 10px rgba(0,0,0,0.5)}
-button{padding:12px;background:#800000;color:white;border:none;width:100%;margin-top:15px;border-radius:8px}
-</style>
-</head>
-<body>
-<h2>Admin Panel - Manage Services</h2>
-
-<div class="box">🏠 Packers & Movers <input type="checkbox" id="s1" checked></div>
-<div class="box">🔧 Plumbing Works <input type="checkbox" id="s2" checked></div>
-<div class="box">💡 Electrical Works <input type="checkbox" id="s3" checked></div>
-<div class="box">❄️ AC installation and service <input type="checkbox" id="s4" checked></div>
-<div class="box">🧹 House Cleaning <input type="checkbox" id="s5" checked></div>
-<div class="box">🚰 Water Tank Cleaning <input type="checkbox" id="s6" checked></div>
-<div class="box">🧼 Bathroom Cleaning <input type="checkbox" id="s7" checked></div>
-<div class="box">👨‍🍳 Cooking Services <input type="checkbox" id="s8" checked></div>
-<div class="box">🛕 Poojari Service <input type="checkbox" id="s9" checked></div>
-<div class="box">🎨 Painting Work <input type="checkbox" id="s10" checked></div>
-<div class="box">🏡 Interior Work <input type="checkbox" id="s11" checked></div>
-<div class="box">🛠 Carpenter & Maid <input type="checkbox" id="s12" checked></div>
-<div class="box">🏢 Real Estate <input type="checkbox" id="s13" checked></div>
-<div class="box">🏗 Construction Works <input type="checkbox" id="s14" checked></div>
-<div class="box">📄 GHMC Permission <input type="checkbox" id="s15" checked></div>
-<div class="box">📄 HMDA Permission <input type="checkbox" id="s16" checked></div>
-<div class="box">📄 Land Conversion <input type="checkbox" id="s17" checked></div>
-<div class="box">💰 Loan Services <input type="checkbox" id="s18" checked></div>
-
-<button onclick="save()">Save Changes</button>
-
-<script>
-function save(){
-for(let i=1;i<=18;i++){
-localStorage.setItem('s'+i,document.getElementById('s'+i).checked);
-}
-alert('Saved Successfully');
-}
-</script>
-</body>
-</html>
-
-
-<!-- ================= CUSTOMER PAGE (index.html) ================= -->
 <!DOCTYPE html>
 <html>
 <head>
 <title>SRI HOME SOLUTIONS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
 font-family:Arial;
@@ -61,11 +13,17 @@ color:white
 
 header{
 text-align:center;
-padding:25px;
+padding:30px;
 background:linear-gradient(135deg,#800000,#000000);
 }
 
-h1{margin:0}
+.banner{
+padding:50px;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') no-repeat center/cover;
+}
+
+.banner h2{font-size:30px;margin:0}
 
 .grid{
 display:grid;
@@ -76,85 +34,156 @@ padding:25px
 
 .card{
 background:linear-gradient(135deg,#1a1a1a,#330000);
-padding:20px;
-border-radius:15px;
+padding:25px;
+border-radius:18px;
 text-align:center;
-color:white;
-box-shadow:0 6px 20px rgba(0,0,0,0.6);
+box-shadow:0 8px 25px rgba(0,0,0,0.7);
 transition:0.3s
 }
 
 .card:hover{
-transform:translateY(-8px) scale(1.03)
+transform:translateY(-10px) scale(1.05)
 }
 
 .icon{
-font-size:40px;
-margin-bottom:10px
+font-size:28px;
+margin-bottom:10px;
+background:#800000;
+padding:10px;
+border-radius:50%;
+display:inline-block
 }
 
 button{
+margin-top:12px;
 background:#800000;
 color:white;
-padding:10px;
+padding:10px 18px;
 border:none;
-border-radius:6px;
+border-radius:8px;
 cursor:pointer
 }
 
-button:hover{
-background:#a00000
+button:hover{background:#a00000}
+
+/* Popup */
+.popup{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center
 }
+
+.popup-content{
+background:#1a1a1a;
+padding:25px;
+border-radius:12px;
+text-align:center;
+}
+
+.popup-content button{
+margin:10px;
+}
+
+.close{
+color:red;
+float:right;
+cursor:pointer
+}
+
+.float-btn{
+position:fixed;
+bottom:20px;
+padding:15px;
+border-radius:50%;
+color:white;
+font-size:20px;
+text-decoration:none
+}
+
+.whatsapp{right:20px;background:#25D366}
 
 </style>
 </head>
 <body>
 
 <header>
-<h1>🏠 SRI HOME SOLUTIONS</h1>
-<p>All Home Services at One Place</p>
+<div style="display:flex; align-items:center; justify-content:center; gap:10px;">
+<div style="background:#800000; padding:10px 15px; border-radius:8px; font-weight:bold; font-size:20px;">SHS</div>
+<div>
+<h1 style="margin:0;">SRI HOME SOLUTIONS</h1>
+<p style="margin:0; font-size:14px;">All Home Services at One Place</p>
+</div>
+</div>
 </header>
 
-<div class="grid" id="services"></div>
+<div class="banner">
+<h2>Book Trusted Home Services Easily</h2>
+<p>Fast | Reliable | Professional</p>
+</div>
+
+<div class="grid">
+
+<div class="card"><div class="icon">🏠</div>Packers & Movers<button onclick="openPopup('Packers & Movers')">Book Now</button></div>
+<div class="card"><div class="icon">🔧</div>Plumbing Works<button onclick="openPopup('Plumbing Works')">Book Now</button></div>
+<div class="card"><div class="icon">💡</div>Electrical Works<button onclick="openPopup('Electrical Works')">Book Now</button></div>
+<div class="card"><div class="icon">❄️</div>AC installion and service<button onclick="openPopup('AC Service')">Book Now</button></div>
+<div class="card"><div class="icon">🚰</div>Water Tank Cleaning<button onclick="openPopup('Water Tank Cleaning')">Book Now</button></div>
+<div class="card"><div class="icon">🧼</div>Bathroom Cleaning<button onclick="openPopup('Bathroom Cleaning')">Book Now</button></div>
+<div class="card"><div class="icon">🧹</div>House Cleaning<button onclick="openPopup('House Cleaning')">Book Now</button></div>
+<div class="card"><div class="icon">👨‍🍳</div>Cooking Services<button onclick="openPopup('Cooking Services')">Book Now</button></div>
+<div class="card"><div class="icon">🛕</div>Poojari Service<button onclick="openPopup('Poojari Service')">Book Now</button></div>
+<div class="card"><div class="icon">🎨</div>Painting Work<button onclick="openPopup('Painting Work')">Book Now</button></div>
+<div class="card"><div class="icon">🏡</div>Interior Work<button onclick="openPopup('Interior Work')">Book Now</button></div>
+<div class="card"><div class="icon">🛠</div>Carpenter & Maid<button onclick="openPopup('Carpenter Service')">Book Now</button></div>
+<div class="card"><div class="icon">🏢</div>Real Estate Services<button onclick="openPopup('Real Estate')">Book Now</button></div>
+<div class="card"><div class="icon">🏗</div>House Construction<button onclick="openPopup('Construction')">Book Now</button></div>
+<div class="card"><div class="icon">🏗</div>Building Construction<button onclick="openPopup('Building Construction')">Book Now</button></div>
+<div class="card"><div class="icon">🏢</div>Extra Floor Construction<button onclick="openPopup('Extra Floor')">Book Now</button></div>
+<div class="card"><div class="icon">📄</div>GHMC Permission<button onclick="openPopup('GHMC Permission')">Book Now</button></div>
+<div class="card"><div class="icon">📄</div>HMDA Permission<button onclick="openPopup('HMDA Permission')">Book Now</button></div>
+<div class="card"><div class="icon">📄</div>Ventures Permission<button onclick="openPopup('Ventures Permission')">Book Now</button></div>
+<div class="card"><div class="icon">📄</div>Land Conversion<button onclick="openPopup('Land Conversion')">Book Now</button></div>
+<div class="card"><div class="icon">💰</div>Loan Services<button onclick="openPopup('Loan Services')">Book Now</button></div>
+
+</div>
+
+<!-- Popup -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">✖</span>
+    <h3>Choose Option</h3>
+    <button onclick="call()">📞 Call</button>
+    <button onclick="book()">💬 WhatsApp</button>
+  </div>
+</div>
+
+<a class="float-btn whatsapp" href="https://wa.me/919492556506">💬</a>
 
 <script>
-const services=[
-{name:'🏠 Packers & Movers',id:'s1'},
-{name:'🔧 Plumbing Works',id:'s2'},
-{name:'💡 Electrical Works',id:'s3'},
-{name:'❄️ AC installation and service',id:'s4'},
-{name:'🧹 House Cleaning',id:'s5'},
-{name:'🚰 Water Tank Cleaning',id:'s6'},
-{name:'🧼 Bathroom Cleaning',id:'s7'},
-{name:'👨‍🍳 Cooking Services',id:'s8'},
-{name:'🛕 Poojari Service',id:'s9'},
-{name:'🎨 Painting Work',id:'s10'},
-{name:'🏡 Interior Work',id:'s11'},
-{name:'🛠 Carpenter & Maid',id:'s12'},
-{name:'🏢 Real Estate',id:'s13'},
-{name:'🏗 Construction Works',id:'s14'},
-{name:'📄 GHMC Permission',id:'s15'},
-{name:'📄 HMDA Permission',id:'s16'},
-{name:'📄 Land Conversion',id:'s17'},
-{name:'💰 Loan Services',id:'s18'}
-];
+let selectedService="";
 
-const container=document.getElementById('services');
-
-services.forEach(s=>{
-if(localStorage.getItem(s.id)!=='false'){
-container.innerHTML+=`<div class="card">
-<div class="icon">${s.name.split(' ')[0]}</div>
-<div>${s.name.substring(2)}</div><br>
-<button onclick="book('${s.name}')">Book Now</button>
-</div>`;
+function openPopup(service){
+selectedService=service;
+document.getElementById('popup').style.display='flex';
 }
-});
 
-function book(name){
-window.open(`https://wa.me/916281396438?text=I want ${name}`);
+function closePopup(){
+document.getElementById('popup').style.display='none';
+}
+
+function book(){
+window.open(`https://wa.me/919492556506?text=Hi, I want ${selectedService} service. Please contact me.`);
+}
+
+function call(){
+window.location.href="tel:916281396438";
 }
 </script>
 
 </body>
 </html>
+

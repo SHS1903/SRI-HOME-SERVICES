@@ -1,172 +1,160 @@
+<!-- ================= ADMIN PAGE (admin.html) ================= -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SRI HOME SOLUTIONS</title>
-
+<title>Admin - SRI HOME SOLUTIONS</title>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: linear-gradient(135deg, #000000, #1a1a1a, #4d0000);
-  color: white;
-}
-
-header {
-  background: linear-gradient(135deg,#800000,#000000);
-  text-align: center;
-  padding: 25px;
-}
-
-nav {
-  background: black;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  padding: 14px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-nav a:hover {
-  background: #800000;
-}
-
-.section {
-  padding: 25px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 20px;
-}
-
-.box {
-  background: white;
-  color: black;
-  padding: 15px;
-  border-radius: 10px;
-  border-left: 5px solid #800000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-h2 {
-  text-align: center;
-  color: white;
-}
-
-/* Toggle Switch */
-.switch {
-  position: relative;
-  width: 50px;
-  height: 24px;
-}
-.switch input {display:none;}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  background: #ccc;
-  border-radius: 24px;
-  top: 0; left: 0; right: 0; bottom: 0;
-}
-
-.slider:before {
-  content: "";
-  position: absolute;
-  height: 18px; width: 18px;
-  left: 3px; bottom: 3px;
-  background: white;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background: #800000;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-footer {
-  background: black;
-  text-align: center;
-  padding: 10px;
-}
-
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #800000;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  text-decoration: none;
-}
+body{font-family:Arial;background:#0a0a0a;color:white;padding:20px}
+h2{text-align:center}
+.box{background:linear-gradient(135deg,#1a1a1a,#330000);padding:12px;margin:10px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;color:white;box-shadow:0 4px 10px rgba(0,0,0,0.5)}
+button{padding:12px;background:#800000;color:white;border:none;width:100%;margin-top:15px;border-radius:8px}
 </style>
 </head>
+<body>
+<h2>Admin Panel - Manage Services</h2>
 
+<div class="box">🏠 Packers & Movers <input type="checkbox" id="s1" checked></div>
+<div class="box">🔧 Plumbing Works <input type="checkbox" id="s2" checked></div>
+<div class="box">💡 Electrical Works <input type="checkbox" id="s3" checked></div>
+<div class="box">❄️ AC installation and service <input type="checkbox" id="s4" checked></div>
+<div class="box">🧹 House Cleaning <input type="checkbox" id="s5" checked></div>
+<div class="box">🚰 Water Tank Cleaning <input type="checkbox" id="s6" checked></div>
+<div class="box">🧼 Bathroom Cleaning <input type="checkbox" id="s7" checked></div>
+<div class="box">👨‍🍳 Cooking Services <input type="checkbox" id="s8" checked></div>
+<div class="box">🛕 Poojari Service <input type="checkbox" id="s9" checked></div>
+<div class="box">🎨 Painting Work <input type="checkbox" id="s10" checked></div>
+<div class="box">🏡 Interior Work <input type="checkbox" id="s11" checked></div>
+<div class="box">🛠 Carpenter & Maid <input type="checkbox" id="s12" checked></div>
+<div class="box">🏢 Real Estate <input type="checkbox" id="s13" checked></div>
+<div class="box">🏗 Construction Works <input type="checkbox" id="s14" checked></div>
+<div class="box">📄 GHMC Permission <input type="checkbox" id="s15" checked></div>
+<div class="box">📄 HMDA Permission <input type="checkbox" id="s16" checked></div>
+<div class="box">📄 Land Conversion <input type="checkbox" id="s17" checked></div>
+<div class="box">💰 Loan Services <input type="checkbox" id="s18" checked></div>
+
+<button onclick="save()">Save Changes</button>
+
+<script>
+function save(){
+for(let i=1;i<=18;i++){
+localStorage.setItem('s'+i,document.getElementById('s'+i).checked);
+}
+alert('Saved Successfully');
+}
+</script>
+</body>
+</html>
+
+
+<!-- ================= CUSTOMER PAGE (index.html) ================= -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>SRI HOME SOLUTIONS</title>
+<style>
+body{
+font-family:Arial;
+margin:0;
+background:radial-gradient(circle at top,#330000,#000000);
+color:white
+}
+
+header{
+text-align:center;
+padding:25px;
+background:linear-gradient(135deg,#800000,#000000);
+}
+
+h1{margin:0}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:25px
+}
+
+.card{
+background:linear-gradient(135deg,#1a1a1a,#330000);
+padding:20px;
+border-radius:15px;
+text-align:center;
+color:white;
+box-shadow:0 6px 20px rgba(0,0,0,0.6);
+transition:0.3s
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.03)
+}
+
+.icon{
+font-size:40px;
+margin-bottom:10px
+}
+
+button{
+background:#800000;
+color:white;
+padding:10px;
+border:none;
+border-radius:6px;
+cursor:pointer
+}
+
+button:hover{
+background:#a00000
+}
+
+</style>
+</head>
 <body>
 
 <header>
-<h1>SRI HOME SOLUTIONS</h1>
-<p>All Home & Property Services in One Place</p>
+<h1>🏠 SRI HOME SOLUTIONS</h1>
+<p>All Home Services at One Place</p>
 </header>
 
-<nav>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</nav>
+<div class="grid" id="services"></div>
 
-<div class="section" id="services">
-<h2>Manage Services</h2>
+<script>
+const services=[
+{name:'🏠 Packers & Movers',id:'s1'},
+{name:'🔧 Plumbing Works',id:'s2'},
+{name:'💡 Electrical Works',id:'s3'},
+{name:'❄️ AC installation and service',id:'s4'},
+{name:'🧹 House Cleaning',id:'s5'},
+{name:'🚰 Water Tank Cleaning',id:'s6'},
+{name:'🧼 Bathroom Cleaning',id:'s7'},
+{name:'👨‍🍳 Cooking Services',id:'s8'},
+{name:'🛕 Poojari Service',id:'s9'},
+{name:'🎨 Painting Work',id:'s10'},
+{name:'🏡 Interior Work',id:'s11'},
+{name:'🛠 Carpenter & Maid',id:'s12'},
+{name:'🏢 Real Estate',id:'s13'},
+{name:'🏗 Construction Works',id:'s14'},
+{name:'📄 GHMC Permission',id:'s15'},
+{name:'📄 HMDA Permission',id:'s16'},
+{name:'📄 Land Conversion',id:'s17'},
+{name:'💰 Loan Services',id:'s18'}
+];
 
-<div class="grid">
+const container=document.getElementById('services');
 
-<div class="box">🏠 Packers & Movers<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🔧 Plumbing Works<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">💡 Electrical Works<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">❄️ AC installation<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🚰 Water Tank Cleaning<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🧼 Bathroom Cleaning<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🧹 House Cleaning<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">👨‍🍳 Cooking Services<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🛕 Poojari Service<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🎨 Painting Work<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🏡 Interior Work<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🛠 Carpenter & Maid<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🏢 Real Estate<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🏗 House Construction<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🏗 Building Construction<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">🏢 Extra Floor<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">📄 GHMC Permission<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">📄 HMDA Permission<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">📄 Ventures Permission<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">📄 Land Conversion<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">📄 Building Permissions<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
-<div class="box">💰 Loan Services<label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+services.forEach(s=>{
+if(localStorage.getItem(s.id)!=='false'){
+container.innerHTML+=`<div class="card">
+<div class="icon">${s.name.split(' ')[0]}</div>
+<div>${s.name.substring(2)}</div><br>
+<button onclick="book('${s.name}')">Book Now</button>
+</div>`;
+}
+});
 
-</div>
-</div>
-
-<div class="section" id="contact">
-<h2>Contact Us</h2>
-<p><b>📞 +91 6281396438</b></p>
-<p><b>📧 srihomesolutions@gmail.com</b></p>
-</div>
-
-<a class="whatsapp" href="https://wa.me/919492556506">💬</a>
-
-<footer>
-<p>© 2026 SRI HOME SOLUTIONS</p>
-</footer>
+function book(name){
+window.open(`https://wa.me/916281396438?text=I want ${name}`);
+}
+</script>
 
 </body>
 </html>

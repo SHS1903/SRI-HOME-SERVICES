@@ -3,6 +3,10 @@
 <head>
 <title>SRI HOME SOLUTIONS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 body{font-family:Arial;margin:0;background:radial-gradient(circle,#1a1a1a,#000);color:white}
 
@@ -36,10 +40,10 @@ transition:.3s
 .card:hover{transform:translateY(-6px)}
 
 .icon{
-font-size:20px;
+font-size:22px;
 margin-bottom:6px;
 background:rgba(255,106,0,0.2);
-padding:6px;
+padding:8px;
 border-radius:50%;
 display:inline-block
 }
@@ -74,9 +78,38 @@ align-items:center
 background:#111;
 padding:20px;
 border-radius:10px;
-text-align:center
+text-align:center;
+position:relative
 }
 
+.close{
+position:absolute;
+top:5px;
+right:10px;
+cursor:pointer;
+font-size:20px
+}
+
+/* SOCIAL ICONS */
+.social{
+text-align:center;
+padding:15px;
+}
+
+.social a{
+margin:0 12px;
+font-size:28px;
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.social a:hover{
+color:#ff6a00;
+transform:scale(1.2);
+}
+
+/* FOOTER */
 .footer{
 padding:20px;
 text-align:center;
@@ -84,16 +117,25 @@ background:#111
 }
 
 .footer img{
-width:55px;
+width:50px;
 margin:8px;
-animation:float 3s infinite
 }
 
-@keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-8px)}
+/* BUSINESS DESCRIPTION */
+.about{
+padding:20px;
+text-align:center;
+background:#0d0d0d;
+color:#ccc;
+line-height:1.6
 }
 
+.about h3{
+color:#ff6a00;
+margin-bottom:10px;
+}
+
+/* FLOAT BUTTONS */
 .float{
 position:fixed;
 bottom:20px;
@@ -130,55 +172,41 @@ cursor:pointer
 <h2>Book Trusted Home Services Easily</h2>
 </div>
 
+<!-- SERVICES -->
 <div class="grid">
 
-<!-- SERVICES -->
-
 <div class="card"><div class="icon">🏠</div><div class="title">Packers & Movers</div><button onclick="openPopup('Packers & Movers')">Book Now</button></div>
-
 <div class="card"><div class="icon">🔧</div><div class="title">Plumbing Works</div><button onclick="openPopup('Plumbing Works')">Book Now</button></div>
-
 <div class="card"><div class="icon">💡</div><div class="title">Electrical Works</div><button onclick="openPopup('Electrical Works')">Book Now</button></div>
-
-<div class="card"><div class="icon">❄️</div><div class="title">AC installation and service</div><button onclick="openPopup('AC Service')">Book Now</button></div>
-
+<div class="card"><div class="icon">❄️</div><div class="title">AC installationand service</div><button onclick="openPopup('AC Service')">Book Now</button></div>
 <div class="card"><div class="icon">🚰</div><div class="title">Water Tank Cleaning</div><button onclick="openPopup('Water Tank Cleaning')">Book Now</button></div>
-
 <div class="card"><div class="icon">🧼</div><div class="title">Bathroom Cleaning</div><button onclick="openPopup('Bathroom Cleaning')">Book Now</button></div>
-
 <div class="card"><div class="icon">🧹</div><div class="title">House Cleaning</div><button onclick="openPopup('House Cleaning')">Book Now</button></div>
-
 <div class="card"><div class="icon">👨‍🍳</div><div class="title">Cooking Services</div><button onclick="openPopup('Cooking Services')">Book Now</button></div>
-
 <div class="card"><div class="icon">🛕</div><div class="title">Poojari Service</div><button onclick="openPopup('Poojari Service')">Book Now</button></div>
-
 <div class="card"><div class="icon">🎨</div><div class="title">Painting Work</div><button onclick="openPopup('Painting Work')">Book Now</button></div>
-
 <div class="card"><div class="icon">🏡</div><div class="title">Interior Work</div><button onclick="openPopup('Interior Work')">Book Now</button></div>
-
 <div class="card"><div class="icon">🛠</div><div class="title">Carpenter & Maid</div><button onclick="openPopup('Carpenter Service')">Book Now</button></div>
-
 <div class="card"><div class="icon">🏢</div><div class="title">Real Estate Services</div><button onclick="openPopup('Real Estate')">Book Now</button></div>
-
 <div class="card"><div class="icon">🏗</div><div class="title">House Construction</div><button onclick="openPopup('Construction')">Book Now</button></div>
-
 <div class="card"><div class="icon">🏗</div><div class="title">Building Construction</div><button onclick="openPopup('Building Construction')">Book Now</button></div>
-
 <div class="card"><div class="icon">🏢</div><div class="title">Extra Floor Construction</div><button onclick="openPopup('Extra Floor')">Book Now</button></div>
-
 <div class="card"><div class="icon">📄</div><div class="title">GHMC Permission</div><button onclick="openPopup('GHMC Permission')">Book Now</button></div>
-
 <div class="card"><div class="icon">📄</div><div class="title">HMDA Permission</div><button onclick="openPopup('HMDA Permission')">Book Now</button></div>
-
 <div class="card"><div class="icon">📄</div><div class="title">Ventures Permission</div><button onclick="openPopup('Ventures Permission')">Book Now</button></div>
-
 <div class="card"><div class="icon">📄</div><div class="title">Land Conversion</div><button onclick="openPopup('Land Conversion')">Book Now</button></div>
-
 <div class="card"><div class="icon">💰</div><div class="title">Loan Services</div><button onclick="openPopup('Loan Services')">Book Now</button></div>
 
 </div>
 
-<!-- FOOTER GRAPHICS -->
+<!-- SOCIAL ICONS -->
+<div class="social">
+<a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+</div>
+
+<!-- FOOTER -->
 <div class="footer">
 <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
 <img src="https://cdn-icons-png.flaticon.com/512/1048/1048315.png">
@@ -186,9 +214,32 @@ cursor:pointer
 <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png">
 </div>
 
+<!-- BUSINESS DESCRIPTION -->
+<div class="about">
+<h3>About SRI HOME SOLUTIONS</h3>
+
+<p>
+SRI HOME SOLUTIONS is your one-stop destination for all types of home services.
+We provide reliable, professional, and affordable solutions including plumbing, electrical works,
+cleaning services, painting, interior work, construction, and much more.
+</p>
+
+<p>
+Our goal is to deliver high-quality services with trusted professionals to make your life easier.
+We ensure customer satisfaction, timely service, and transparent pricing.
+</p>
+
+<p>
+📞 Contact: 9492556506  
+<br>
+📍 Serving all areas with trusted and experienced service providers
+</p>
+</div>
+
 <!-- POPUP -->
-<div id="popup" class="popup">
+<div id="popup" class="popup" onclick="closePopup(event)">
 <div class="popup-content">
+<span class="close" onclick="closePopup()">&times;</span>
 <h3>Choose Option</h3>
 <button onclick="call()">📞 Call</button>
 <button onclick="book()">💬 WhatsApp</button>
@@ -205,6 +256,12 @@ let selectedService="";
 function openPopup(service){
 selectedService=service;
 document.getElementById('popup').style.display='flex';
+}
+
+function closePopup(e){
+if(!e || e.target.id==='popup'){
+document.getElementById('popup').style.display='none';
+}
 }
 
 function book(){

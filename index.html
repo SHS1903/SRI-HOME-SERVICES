@@ -23,6 +23,7 @@ header{
 
 h1{margin:0;font-size:22px}
 
+/* SECTION */
 .section-title{
 text-align:center;
 color:#ff6a00;
@@ -31,7 +32,6 @@ font-size:18px;
 font-weight:bold;
 }
 
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -39,7 +39,6 @@ gap:20px;
 padding:20px
 }
 
-/* CARD */
 .card{
 background:linear-gradient(135deg,#111,#222);
 padding:15px;
@@ -73,29 +72,42 @@ cursor:pointer;
 font-size:12px
 }
 
-/* FLOAT BUTTON */
+/* FLOAT */
 .float{
 position:fixed;
-bottom:20px;
 right:20px;
-background:#25D366;
-color:white;
-padding:14px;
 border-radius:50%;
-text-decoration:none;
-font-size:20px
+padding:12px;
+color:white;
+border:none;
+cursor:pointer;
 }
 
-.share{
+/* POPUP */
+.popup{
+display:none;
 position:fixed;
-bottom:90px;
-right:20px;
-background:#ff6a00;
-color:white;
-padding:12px;
-border-radius:50%;
-border:none;
-cursor:pointer
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center
+}
+
+.popup-content{
+background:#111;
+padding:20px;
+border-radius:10px;
+text-align:center;
+position:relative
+}
+
+.close{
+position:absolute;
+top:5px;
+right:10px;
+cursor:pointer;
+font-size:20px;
 }
 
 /* FOOTER */
@@ -135,17 +147,17 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 <div class="section-title">Properties and Constructions and Approvals</div>
 <div class="grid">
 
-<div class="card"><div class="icon">🏢</div><div class="title">Real Estate</div></div>
-<div class="card"><div class="icon">🌱</div><div class="title">All Development Lands</div></div>
-<div class="card"><div class="icon">📊</div><div class="title">All Revenue Works</div></div>
-<div class="card"><div class="icon">📑</div><div class="title">Registration Process</div></div>
-<div class="card"><div class="icon">🏗</div><div class="title">House Construction</div></div>
-<div class="card"><div class="icon">🏢</div><div class="title">Building Construction</div></div>
-<div class="card"><div class="icon">🏬</div><div class="title">Extra Floor Permission</div></div>
-<div class="card"><div class="icon">📄</div><div class="title">GHMC Permission</div></div>
-<div class="card"><div class="icon">📄</div><div class="title">HMDA Permission</div></div>
-<div class="card"><div class="icon">📍</div><div class="title">Venture Permission</div></div>
-<div class="card"><div class="icon">🌍</div><div class="title">Land Conversion</div></div>
+<div class="card"><div class="icon">🏢</div><div class="title">Real Estate</div><button onclick="openPopup('Real Estate')">Book Now</button></div>
+<div class="card"><div class="icon">🌱</div><div class="title">All Development Lands</div><button onclick="openPopup('Development Lands')">Book Now</button></div>
+<div class="card"><div class="icon">📊</div><div class="title">All Revenue Works</div><button onclick="openPopup('Revenue Works')">Book Now</button></div>
+<div class="card"><div class="icon">📑</div><div class="title">Registration Process</div><button onclick="openPopup('Registration')">Book Now</button></div>
+<div class="card"><div class="icon">🏗</div><div class="title">House Construction</div><button onclick="openPopup('House Construction')">Book Now</button></div>
+<div class="card"><div class="icon">🏢</div><div class="title">Building Construction</div><button onclick="openPopup('Building Construction')">Book Now</button></div>
+<div class="card"><div class="icon">🏬</div><div class="title">Extra Floor Permission</div><button onclick="openPopup('Extra Floor')">Book Now</button></div>
+<div class="card"><div class="icon">📄</div><div class="title">GHMC Permission</div><button onclick="openPopup('GHMC')">Book Now</button></div>
+<div class="card"><div class="icon">📄</div><div class="title">HMDA Permission</div><button onclick="openPopup('HMDA')">Book Now</button></div>
+<div class="card"><div class="icon">📍</div><div class="title">Venture Permission</div><button onclick="openPopup('Venture')">Book Now</button></div>
+<div class="card"><div class="icon">🌍</div><div class="title">Land Conversion</div><button onclick="openPopup('Land Conversion')">Book Now</button></div>
 
 </div>
 
@@ -153,25 +165,25 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 <div class="section-title">All Financial Services</div>
 <div class="grid">
 
-<div class="card"><div class="icon">💰</div><div class="title">Plot Loans</div></div>
-<div class="card"><div class="icon">🏠</div><div class="title">Home Loans</div></div>
-<div class="card"><div class="icon">🏗</div><div class="title">Construction Loans</div></div>
-<div class="card"><div class="icon">➕</div><div class="title">Top Up Loans</div></div>
-<div class="card"><div class="icon">🏦</div><div class="title">Mortgage Loans</div></div>
-<div class="card"><div class="icon">📊</div><div class="title">Project Pre-Approved Loans</div></div>
-<div class="card"><div class="icon">💵</div><div class="title">Private Finance</div></div>
+<div class="card"><div class="icon">💰</div><div class="title">Plot Loans</div><button onclick="openPopup('Plot Loan')">Book Now</button></div>
+<div class="card"><div class="icon">🏠</div><div class="title">Home Loans</div><button onclick="openPopup('Home Loan')">Book Now</button></div>
+<div class="card"><div class="icon">🏗</div><div class="title">Construction Loans</div><button onclick="openPopup('Construction Loan')">Book Now</button></div>
+<div class="card"><div class="icon">➕</div><div class="title">Top Up Loans</div><button onclick="openPopup('Top Up Loan')">Book Now</button></div>
+<div class="card"><div class="icon">🏦</div><div class="title">Mortgage Loans</div><button onclick="openPopup('Mortgage Loan')">Book Now</button></div>
+<div class="card"><div class="icon">📊</div><div class="title">Project Pre-Approved Loans</div><button onclick="openPopup('Project Loan')">Book Now</button></div>
+<div class="card"><div class="icon">💵</div><div class="title">Private Finance</div><button onclick="openPopup('Private Finance')">Book Now</button></div>
 
 </div>
 
-<!-- HOME INSTALLATION -->
+<!-- HOME -->
 <div class="section-title">Home Installation Services</div>
 <div class="grid">
 
-<div class="card"><div class="icon">❄️</div><div class="title">AC Installation & Service</div></div>
-<div class="card"><div class="icon">📷</div><div class="title">CC Camera Installation</div></div>
-<div class="card"><div class="icon">⚡</div><div class="title">Electrical Works</div></div>
-<div class="card"><div class="icon">🔧</div><div class="title">Plumbing Works</div></div>
-<div class="card"><div class="icon">🪚</div><div class="title">Carpenter Service</div></div>
+<div class="card"><div class="icon">❄️</div><div class="title">AC Installation & Service</div><button onclick="openPopup('AC')">Book Now</button></div>
+<div class="card"><div class="icon">📷</div><div class="title">CC Camera Installation</div><button onclick="openPopup('CCTV')">Book Now</button></div>
+<div class="card"><div class="icon">⚡</div><div class="title">Electrical Works</div><button onclick="openPopup('Electrical')">Book Now</button></div>
+<div class="card"><div class="icon">🔧</div><div class="title">Plumbing Works</div><button onclick="openPopup('Plumbing')">Book Now</button></div>
+<div class="card"><div class="icon">🪚</div><div class="title">Carpenter Service</div><button onclick="openPopup('Carpenter')">Book Now</button></div>
 
 </div>
 
@@ -179,27 +191,51 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 <div class="section-title">Lifestyle & Home Services</div>
 <div class="grid">
 
-<div class="card"><div class="icon">🧹</div><div class="title">Maid Service</div></div>
-<div class="card"><div class="icon">🧼</div><div class="title">House Cleaning</div></div>
-<div class="card"><div class="icon">🚚</div><div class="title">Packers & Movers</div></div>
-<div class="card"><div class="icon">🙏</div><div class="title">Poojari Services</div></div>
-<div class="card"><div class="icon">🍳</div><div class="title">Cooking Services</div></div>
-<div class="card"><div class="icon">🎨</div><div class="title">Painting</div></div>
-<div class="card"><div class="icon">🪑</div><div class="title">Interior Works</div></div>
-<div class="card"><div class="icon">🚿</div><div class="title">Water Tank Cleaning</div></div>
-<div class="card"><div class="icon">🛁</div><div class="title">Bathroom Cleaning</div></div>
+<div class="card"><div class="icon">🧹</div><div class="title">Maid Service</div><button onclick="openPopup('Maid')">Book Now</button></div>
+<div class="card"><div class="icon">🧼</div><div class="title">House Cleaning</div><button onclick="openPopup('Cleaning')">Book Now</button></div>
+<div class="card"><div class="icon">🚚</div><div class="title">Packers & Movers</div><button onclick="openPopup('Packers')">Book Now</button></div>
+<div class="card"><div class="icon">🙏</div><div class="title">Poojari Services</div><button onclick="openPopup('Poojari')">Book Now</button></div>
+<div class="card"><div class="icon">🍳</div><div class="title">Cooking Services</div><button onclick="openPopup('Cooking')">Book Now</button></div>
+<div class="card"><div class="icon">🎨</div><div class="title">Painting</div><button onclick="openPopup('Painting')">Book Now</button></div>
+<div class="card"><div class="icon">🪑</div><div class="title">Interior Works</div><button onclick="openPopup('Interior')">Book Now</button></div>
+<div class="card"><div class="icon">🚿</div><div class="title">Water Tank Cleaning</div><button onclick="openPopup('Tank Cleaning')">Book Now</button></div>
+<div class="card"><div class="icon">🛁</div><div class="title">Bathroom Cleaning</div><button onclick="openPopup('Bathroom Cleaning')">Book Now</button></div>
 
 </div>
 
-<!-- FLOAT -->
-<a class="float" href="https://wa.me/916281396438">💬</a>
-<button class="share" onclick="shareSite()">🔗</button>
+<!-- FLOAT BUTTONS -->
+<button class="float" style="bottom:20px;background:#25D366;" onclick="openWhatsApp()">💬</button>
+<button class="float" style="bottom:80px;background:#ff6a00;" onclick="callNow()">📞</button>
+<button class="float" style="bottom:140px;background:#1e90ff;" onclick="openBook()">📅</button>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+<div class="popup-content">
+<span class="close" onclick="closePopup()">&times;</span>
+<h3>Choose Option</h3>
+<button onclick="callNow()">📞 Call</button>
+<button onclick="openWhatsApp()">💬 WhatsApp</button>
+</div>
+</div>
+
+<!-- BOOK POPUP -->
+<div id="bookPopup" class="popup">
+<div class="popup-content">
+<span class="close" onclick="closeBook()">&times;</span>
+
+<h3>Book Your Service</h3>
+
+<input id="name" placeholder="Your Name" style="padding:8px;margin:5px;width:90%;">
+<input id="phone" placeholder="Phone Number" style="padding:8px;margin:5px;width:90%;">
+
+<button onclick="submitBooking()">Submit</button>
+
+</div>
+</div>
 
 <!-- FOOTER -->
 <footer>
-
 <p><b>A. Krishna MBA (Finance), M.COM</b></p>
-
 <p>📧 srihomesolutins2026@gmail.com</p>
 <p>📞 6281396438</p>
 
@@ -209,17 +245,47 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 </div>
 
 <p>© 2026 SRI HOME SOLUTIONS</p>
-
 </footer>
 
 <script>
-function shareSite(){
-if(navigator.share){
-navigator.share({title:'SRI HOME SOLUTIONS',url:window.location.href});
-}else{
-navigator.clipboard.writeText(window.location.href);
-alert('Link copied!');
+let selectedService="";
+
+function openPopup(service){
+selectedService=service;
+document.getElementById("popup").style.display="flex";
 }
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
+function openBook(){
+document.getElementById("bookPopup").style.display="flex";
+}
+
+function closeBook(){
+document.getElementById("bookPopup").style.display="none";
+}
+
+function callNow(){
+window.location.href="tel:6281396438";
+}
+
+function openWhatsApp(){
+window.open(`https://wa.me/916281396438?text=Hi, I want ${selectedService} service.`);
+}
+
+function submitBooking(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+
+if(name=="" || phone==""){
+alert("Please fill details");
+return;
+}
+
+let msg=`Name: ${name}%0APhone: ${phone}%0AService: ${selectedService}`;
+window.open(`https://wa.me/916281396438?text=${msg}`);
 }
 </script>
 

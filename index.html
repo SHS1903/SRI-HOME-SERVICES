@@ -14,7 +14,6 @@ body{
   color:white;
 }
 
-/* HEADER */
 header{
   padding:20px;
   text-align:center;
@@ -32,6 +31,7 @@ font-size:18px;
 font-weight:bold;
 }
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -39,6 +39,7 @@ gap:20px;
 padding:20px
 }
 
+/* CARD */
 .card{
 background:linear-gradient(135deg,#111,#222);
 padding:15px;
@@ -72,7 +73,7 @@ cursor:pointer;
 font-size:12px
 }
 
-/* FLOAT */
+/* FLOAT BUTTONS */
 .float{
 position:fixed;
 right:20px;
@@ -146,7 +147,6 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 <!-- PROPERTY -->
 <div class="section-title">Properties and Constructions and Approvals</div>
 <div class="grid">
-
 <div class="card"><div class="icon">🏢</div><div class="title">Real Estate</div><button onclick="openPopup('Real Estate')">Book Now</button></div>
 <div class="card"><div class="icon">🌱</div><div class="title">All Development Lands</div><button onclick="openPopup('Development Lands')">Book Now</button></div>
 <div class="card"><div class="icon">📊</div><div class="title">All Revenue Works</div><button onclick="openPopup('Revenue Works')">Book Now</button></div>
@@ -158,13 +158,11 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 <div class="card"><div class="icon">📄</div><div class="title">HMDA Permission</div><button onclick="openPopup('HMDA')">Book Now</button></div>
 <div class="card"><div class="icon">📍</div><div class="title">Venture Permission</div><button onclick="openPopup('Venture')">Book Now</button></div>
 <div class="card"><div class="icon">🌍</div><div class="title">Land Conversion</div><button onclick="openPopup('Land Conversion')">Book Now</button></div>
-
 </div>
 
 <!-- FINANCE -->
 <div class="section-title">All Financial Services</div>
 <div class="grid">
-
 <div class="card"><div class="icon">💰</div><div class="title">Plot Loans</div><button onclick="openPopup('Plot Loan')">Book Now</button></div>
 <div class="card"><div class="icon">🏠</div><div class="title">Home Loans</div><button onclick="openPopup('Home Loan')">Book Now</button></div>
 <div class="card"><div class="icon">🏗</div><div class="title">Construction Loans</div><button onclick="openPopup('Construction Loan')">Book Now</button></div>
@@ -172,25 +170,21 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 <div class="card"><div class="icon">🏦</div><div class="title">Mortgage Loans</div><button onclick="openPopup('Mortgage Loan')">Book Now</button></div>
 <div class="card"><div class="icon">📊</div><div class="title">Project Pre-Approved Loans</div><button onclick="openPopup('Project Loan')">Book Now</button></div>
 <div class="card"><div class="icon">💵</div><div class="title">Private Finance</div><button onclick="openPopup('Private Finance')">Book Now</button></div>
-
 </div>
 
 <!-- HOME -->
 <div class="section-title">Home Installation Services</div>
 <div class="grid">
-
 <div class="card"><div class="icon">❄️</div><div class="title">AC Installation & Service</div><button onclick="openPopup('AC')">Book Now</button></div>
 <div class="card"><div class="icon">📷</div><div class="title">CC Camera Installation</div><button onclick="openPopup('CCTV')">Book Now</button></div>
 <div class="card"><div class="icon">⚡</div><div class="title">Electrical Works</div><button onclick="openPopup('Electrical')">Book Now</button></div>
 <div class="card"><div class="icon">🔧</div><div class="title">Plumbing Works</div><button onclick="openPopup('Plumbing')">Book Now</button></div>
 <div class="card"><div class="icon">🪚</div><div class="title">Carpenter Service</div><button onclick="openPopup('Carpenter')">Book Now</button></div>
-
 </div>
 
 <!-- LIFESTYLE -->
 <div class="section-title">Lifestyle & Home Services</div>
 <div class="grid">
-
 <div class="card"><div class="icon">🧹</div><div class="title">Maid Service</div><button onclick="openPopup('Maid')">Book Now</button></div>
 <div class="card"><div class="icon">🧼</div><div class="title">House Cleaning</div><button onclick="openPopup('Cleaning')">Book Now</button></div>
 <div class="card"><div class="icon">🚚</div><div class="title">Packers & Movers</div><button onclick="openPopup('Packers')">Book Now</button></div>
@@ -200,13 +194,13 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 <div class="card"><div class="icon">🪑</div><div class="title">Interior Works</div><button onclick="openPopup('Interior')">Book Now</button></div>
 <div class="card"><div class="icon">🚿</div><div class="title">Water Tank Cleaning</div><button onclick="openPopup('Tank Cleaning')">Book Now</button></div>
 <div class="card"><div class="icon">🛁</div><div class="title">Bathroom Cleaning</div><button onclick="openPopup('Bathroom Cleaning')">Book Now</button></div>
-
 </div>
 
 <!-- FLOAT BUTTONS -->
 <button class="float" style="bottom:20px;background:#25D366;" onclick="openWhatsApp()">💬</button>
 <button class="float" style="bottom:80px;background:#ff6a00;" onclick="callNow()">📞</button>
 <button class="float" style="bottom:140px;background:#1e90ff;" onclick="openBook()">📅</button>
+<button class="float" style="bottom:200px;background:#ff6a00;" onclick="shareSite()">🔗</button>
 
 <!-- POPUP -->
 <div id="popup" class="popup">
@@ -222,14 +216,10 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 <div id="bookPopup" class="popup">
 <div class="popup-content">
 <span class="close" onclick="closeBook()">&times;</span>
-
 <h3>Book Your Service</h3>
-
 <input id="name" placeholder="Your Name" style="padding:8px;margin:5px;width:90%;">
 <input id="phone" placeholder="Phone Number" style="padding:8px;margin:5px;width:90%;">
-
 <button onclick="submitBooking()">Submit</button>
-
 </div>
 </div>
 
@@ -238,12 +228,10 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 <p><b>A. Krishna MBA (Finance), M.COM</b></p>
 <p>📧 srihomesolutins2026@gmail.com</p>
 <p>📞 6281396438</p>
-
 <div>
 <a href="#"><i class="fab fa-facebook"></i></a>
 <a href="#"><i class="fab fa-instagram"></i></a>
 </div>
-
 <p>© 2026 SRI HOME SOLUTIONS</p>
 </footer>
 
@@ -286,6 +274,18 @@ return;
 
 let msg=`Name: ${name}%0APhone: ${phone}%0AService: ${selectedService}`;
 window.open(`https://wa.me/916281396438?text=${msg}`);
+}
+
+function shareSite(){
+if(navigator.share){
+navigator.share({
+title:'SRI HOME SOLUTIONS',
+url:window.location.href
+});
+}else{
+navigator.clipboard.writeText(window.location.href);
+alert('Link copied!');
+}
 }
 </script>
 

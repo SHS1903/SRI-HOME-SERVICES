@@ -20,11 +20,7 @@ header{
   background:linear-gradient(135deg,#0b3d2e,#d4af37);
 }
 
-h1{
-margin:0;
-font-size:22px;
-color:#ffd700;
-}
+h1{margin:0;font-size:22px;color:#ffd700}
 
 /* SECTION */
 .section-title{
@@ -69,11 +65,7 @@ display:inline-block;
 color:#ffd700;
 }
 
-.title{
-font-size:13px;
-margin-top:5px;
-color:#ffffff;
-}
+.title{font-size:13px;margin-top:5px;color:#ffffff}
 
 /* BUTTON */
 button{
@@ -136,6 +128,12 @@ background:#0b3d2e;
 border-top:2px solid #ffd700;
 color:#ffd700;
 }
+
+footer a{
+color:#ffd700;
+margin:0 10px;
+font-size:22px;
+}
 </style>
 </head>
 
@@ -145,9 +143,15 @@ color:#ffd700;
 <h1>SRI HOME SOLUTIONS</h1>
 
 <p style="font-size:12px;line-height:1.6;max-width:90%;margin:10px auto;color:#fff8dc;">
-All Services Under One Roof – Real Estate, Construction, Loans & Complete Home Services.  
-Trusted • Fast • Reliable
+SRI HOME SOLUTIONS is a one-stop solution for all your real estate, construction, approval, and financial needs.  
+We specialize in buying and selling lands, development works, construction services, and government approvals such as GHMC and HMDA.  
+
+We also provide complete financial support including home loans, plot loans, construction loans, and private finance.  
+In addition, we offer essential home services like AC installation, CCTV setup, plumbing, electrical works, cleaning, and more.  
+
+Our goal is to provide trusted, fast, and reliable services under one roof with complete customer satisfaction.
 </p>
+
 </header>
 
 <!-- PROPERTY -->
@@ -208,7 +212,40 @@ Trusted • Fast • Reliable
 <button class="float" style="bottom:140px;background:#d4af37;color:#0b3d2e;" onclick="openBook()">📅</button>
 <button class="float" style="bottom:200px;background:#1b5e20;" onclick="shareSite()">🔗</button>
 
-<!-- POPUP + SCRIPT SAME -->
+<!-- POPUPS -->
+<div id="popup" class="popup">
+<div class="popup-content">
+<span class="close" onclick="closePopup()">&times;</span>
+<h3>Choose Option</h3>
+<button onclick="callNow()">📞 Call</button>
+<button onclick="openWhatsApp()">💬 WhatsApp</button>
+</div>
+</div>
+
+<div id="bookPopup" class="popup">
+<div class="popup-content">
+<span class="close" onclick="closeBook()">&times;</span>
+<h3>Book Your Service</h3>
+<input id="name" placeholder="Your Name" style="padding:8px;margin:5px;width:90%;">
+<input id="phone" placeholder="Phone Number" style="padding:8px;margin:5px;width:90%;">
+<button onclick="submitBooking()">Submit</button>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<p><b>A. Krishna MBA (Finance), M.COM</b></p>
+<p>📧 srihomesolutions2026@gmail.com</p>
+<p>📞 6281946438</p>
+
+<div>
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+</div>
+
+<p>© 2026 SRI HOME SOLUTIONS</p>
+</footer>
+
 <script>
 let selectedService="";
 
@@ -216,27 +253,51 @@ function openPopup(service){
 selectedService=service;
 document.getElementById("popup").style.display="flex";
 }
-function closePopup(){document.getElementById("popup").style.display="none";}
-function openBook(){document.getElementById("bookPopup").style.display="flex";}
-function closeBook(){document.getElementById("bookPopup").style.display="none";}
-function callNow(){window.location.href="tel:6281946438";}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
+function openBook(){
+document.getElementById("bookPopup").style.display="flex";
+}
+
+function closeBook(){
+document.getElementById("bookPopup").style.display="none";
+}
+
+function callNow(){
+window.location.href="tel:6281946438";
+}
+
 function openWhatsApp(){
 window.open(`https://wa.me/916281946438?text=Hi, I want ${selectedService} service.`);
 }
+
 function submitBooking(){
 let name=document.getElementById("name").value;
 let phone=document.getElementById("phone").value;
-if(name=="" || phone==""){alert("Please fill details");return;}
+
+if(name=="" || phone==""){
+alert("Please fill details");
+return;
+}
+
 let msg=`Name: ${name}%0APhone: ${phone}%0AService: ${selectedService}`;
 window.open(`https://wa.me/916281946438?text=${msg}`);
 }
+
 function shareSite(){
 if(navigator.share){
-navigator.share({title:'SRI HOME SOLUTIONS',url:window.location.href});
+navigator.share({
+title:'SRI HOME SOLUTIONS',
+url:window.location.href
+});
 }else{
 navigator.clipboard.writeText(window.location.href);
 alert('Link copied!');
-}}
+}
+}
 </script>
 
 </body>

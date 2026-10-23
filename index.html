@@ -10,22 +10,22 @@
 body{
   font-family:Arial;
   margin:0;
-  background:linear-gradient(135deg,#0b3d2e,#1b5e20,#d4af37,#f5e6a1);
+  background:linear-gradient(135deg,#080d2b,#21134d,#35206b,#0b1638);
   color:#ffffff;
 }
 
 header{
   padding:20px;
   text-align:center;
-  background:linear-gradient(135deg,#0b3d2e,#d4af37);
+  background:linear-gradient(135deg,#080d2b,#35206b,#d4af37);
 }
 
-h1{margin:0;font-size:22px;color:#ffd700}
+h1{margin:0;font-size:22px;color:#f5c542}
 
 /* SECTION */
 .section-title{
 text-align:center;
-color:#ffd700;
+color:#f5c542;
 margin-top:25px;
 font-size:18px;
 font-weight:bold;
@@ -41,28 +41,28 @@ padding:20px
 
 /* CARD */
 .card{
-background:rgba(0,0,0,0.5);
+background:rgba(12,14,42,0.78);
 padding:15px;
 border-radius:15px;
 text-align:center;
 box-shadow:0 6px 20px rgba(0,0,0,0.7);
 transition:.3s;
-border:1px solid rgba(255,215,0,0.4);
+border:1px solid rgba(245,197,66,0.55);
 }
 
 .card:hover{
 transform:translateY(-6px);
-background:rgba(0,0,0,0.7);
+background:rgba(23,16,57,0.92);
 }
 
 .icon{
 font-size:22px;
 margin-bottom:6px;
-background:rgba(255,215,0,0.2);
+background:rgba(245,197,66,0.16);
 padding:8px;
 border-radius:50%;
 display:inline-block;
-color:#ffd700;
+color:#f5c542;
 }
 
 .title{font-size:13px;margin-top:5px;color:#ffffff}
@@ -70,8 +70,8 @@ color:#ffd700;
 /* BUTTON */
 button{
 margin-top:8px;
-background:#ffd700;
-color:#0b3d2e;
+background:#f5c542;
+color:#080d2b;
 padding:8px 12px;
 border:none;
 border-radius:6px;
@@ -97,18 +97,18 @@ display:none;
 position:fixed;
 top:0;left:0;
 width:100%;height:100%;
-background:rgba(0,0,0,0.7);
+background:rgba(23,16,57,0.92);
 justify-content:center;
 align-items:center
 }
 
 .popup-content{
-background:#0b3d2e;
+background:#080d2b;
 padding:20px;
 border-radius:10px;
 text-align:center;
 position:relative;
-border:1px solid #ffd700;
+border:1px solid #f5c542;
 }
 
 .close{
@@ -117,20 +117,20 @@ top:5px;
 right:10px;
 cursor:pointer;
 font-size:20px;
-color:#ffd700;
+color:#f5c542;
 }
 
 /* FOOTER */
 footer{
 text-align:center;
 padding:20px;
-background:#0b3d2e;
-border-top:2px solid #ffd700;
-color:#ffd700;
+background:#080d2b;
+border-top:2px solid #f5c542;
+color:#f5c542;
 }
 
 footer a{
-color:#ffd700;
+color:#f5c542;
 margin:0 10px;
 font-size:22px;
 }
@@ -208,9 +208,9 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 
 <!-- FLOAT BUTTONS -->
 <button class="float" style="bottom:20px;background:#25D366;" onclick="openWhatsApp()">💬</button>
-<button class="float" style="bottom:80px;background:#ffd700;color:#0b3d2e;" onclick="callNow()">📞</button>
-<button class="float" style="bottom:140px;background:#d4af37;color:#0b3d2e;" onclick="openBook()">📅</button>
-<button class="float" style="bottom:200px;background:#1b5e20;" onclick="shareSite()">🔗</button>
+<button class="float" style="bottom:80px;background:#f5c542;color:#080d2b;" onclick="callNow()">📞</button>
+<button class="float" style="bottom:140px;background:#d4af37;color:#080d2b;" onclick="openBook()">📅</button>
+<button class="float" style="bottom:200px;background:#21134d;" onclick="shareSite()">🔗</button>
 
 <!-- POPUPS -->
 <div id="popup" class="popup">
@@ -236,7 +236,7 @@ Our goal is to provide trusted, fast, and reliable services under one roof with 
 <footer>
 <p><b>A. Krishna MBA (Finance), M.COM</b></p>
 <p>📧 srihomesolutions2026@gmail.com</p>
-<p>📞 6281946438</p>
+<p>📞 6281396438</p>
 
 <div>
 <a href="#"><i class="fab fa-facebook"></i></a>
@@ -267,11 +267,11 @@ document.getElementById("bookPopup").style.display="none";
 }
 
 function callNow(){
-window.location.href="tel:6281946438";
+window.location.href="tel:6281396438";
 }
 
 function openWhatsApp(){
-window.open(`https://wa.me/916281946438?text=Hi, I want ${selectedService} service.`);
+window.open(`https://wa.me/916281396438?text=Hi, I want ${selectedService} service.`);
 }
 
 function submitBooking(){
@@ -284,7 +284,7 @@ return;
 }
 
 let msg=`Name: ${name}%0APhone: ${phone}%0AService: ${selectedService}`;
-window.open(`https://wa.me/916281946438?text=${msg}`);
+window.open(`https://wa.me/916281396438?text=${msg}`);
 }
 
 function shareSite(){
